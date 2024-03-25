@@ -10,6 +10,7 @@ public class MyConcurrentHashMap<K, V> {
     private final ReadWriteLock lock = new ReentrantReadWriteLock();
 
     public void put(K key, V value) {
+        // x - блокировка - запрещает и чтение и запись
         lock.writeLock().lock();
         try {
             map.put(key, value);
@@ -19,6 +20,7 @@ public class MyConcurrentHashMap<K, V> {
     }
 
     public V get(K key) {
+        // s - блокировка - запрещает запись
         lock.readLock().lock();
         try {
             return map.get(key);

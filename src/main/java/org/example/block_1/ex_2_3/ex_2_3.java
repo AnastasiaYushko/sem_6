@@ -6,6 +6,7 @@ public class ex_2_3 {
         Thread thread1 = new Thread(new MyThread1());
         thread1.start();
         try {
+            // Ожидает завершения работы этого потока
             thread1.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -2,6 +2,11 @@ package org.example.block_1.ex_10;
 
 // 10* Написать свой класс, аналогичный ConcurrentHashMap , используя ReadWriteLock.
 // Будет ли эта реализация хуже ConcurrentHashMap, и если да, то почему?
+
+// Отличия ConcurrentHashMap от HashMap
+// Потокобезопасность - исправное функционирование при использовании его из нескольких потоков одновременно.
+// Отсутствие блокировок всей таблицы на время доступа к ней
+// Отсутствовали блокировки таблицы при выполнении операции чтения
 public class ex_10 {
     public static void main(String[] args) {
         MyConcurrentHashMap<String, Integer> customMap = new MyConcurrentHashMap<>();
